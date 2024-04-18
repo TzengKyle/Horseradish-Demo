@@ -1,8 +1,5 @@
 // main.scss
-$primary-color: blue;
-$secondary-color: green;
-
-
+$primary-green: rgba(49, 210, 17, 0.922);
 
 @mixin max-container {
     margin-left: auto;
@@ -42,6 +39,12 @@ input {
     padding-bottom: 10px;
 }
 
+.color-box {
+    width: 50px;
+    height: 50px;
+    @include border
+}
+
 .radio-container {
     @include flex-col;
     display: flex;
@@ -69,7 +72,7 @@ input {
 
     &:hover {
         background-image: linear-gradient(to bottom, #45a049, #4CAF50);
-        box-shadow: 0 6px 12px rgba(49, 210, 17, 0.922);
+        box-shadow: 0 6px 12px $primary-green;
     }
 
     &:active {
@@ -158,23 +161,6 @@ input {
         }
     }
 }
-
-// .ProductList {
-//     .light {
-//         .list-line {
-//             background-color: rgb(0 0 0);
-//             color: rgb(255 255 255);
-//         }
-//     }
-
-//     .dark {
-//         .list-line {
-//             background-color: rgb(255 255 255);
-//             color: rgb(0 0 0);
-//         }
-//     }
-
-// }
 
 .vertical {
     .home-page {

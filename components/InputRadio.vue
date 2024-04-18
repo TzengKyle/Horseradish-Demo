@@ -6,20 +6,6 @@
             <label :for="option.value">{{ option.label }}</label>
         </div>
     </div>
-    <!-- <div class="ratio-container">
-        <div class="flex-center">
-            <input type="radio" value="apple" id="apple" v-model="checkedFruit" @input="updateModel">
-            <label for="apple">Apple</label>
-        </div>
-        <div>
-            <input type="radio" value="orange" id="orange" v-model="checkedFruit" @input="updateModel">
-            <label for="orange">Orange</label>
-        </div>
-        <div>
-            <input type="radio" value="banana" id="banana" v-model="checkedFruit" @input="updateModel">
-            <label for="banana">Banana</label>
-        </div>
-    </div> -->
 </template>
   
 <script setup>

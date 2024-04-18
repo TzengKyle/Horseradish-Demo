@@ -1,10 +1,9 @@
 <template>
+    <Head>
+        <Title>Horseradish Demo - v-model demo page</Title>
+        <Meta name="description" content="This is v-model demo page" />
+    </Head>
     <div class="v-model-demo-page">
-
-        <Head>
-            <Title>Horseradish Demo - v-model demo page</Title>
-            <Meta name="description" content="This is v-model demo page" />
-        </Head>
         <PageTitle>v-model demo page</PageTitle>
 
         <form>

@@ -24,11 +24,6 @@
 <script setup>
 const { toggleTheme, theme } = useTheme()
 const { toggleArrange, arrange } = useArrange()
-
-// function _toggleTheme() {
-//     toggleTheme()
-//     console.log(theme.value)
-// }
 </script>
 
 <style lang="scss" scoped>

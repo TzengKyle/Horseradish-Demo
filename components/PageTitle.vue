@@ -1,7 +1,7 @@
 <template>
     <nav class="PageTitle">
         <h1>
-            <slot></slot>
+            <slot />
         </h1>
     </nav>
 </template>

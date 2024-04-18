@@ -1,5 +1,5 @@
 <template>
-    <InputText v-if="inputType === 'InputText'" v-model="name" placeholder="Name" />
+    <InputText v-if="inputType === 'InputText'" v-model="inputValue" placeholder="Name" />
     <InputRadio v-else-if="inputType === 'InputRadio'" v-model="inputValue" :options="options" />
     <InputSelect v-else v-model="inputValue" :options="options" />
 </template>
@@ -9,10 +9,10 @@ const props = defineProps({
     inputType: String,
     options: {
         type: Array,
-        default: () => []
+        default: []
     },
     value: {
-        type: [String, Number, Boolean],
+        type: String,
         default: ''
     }
 });

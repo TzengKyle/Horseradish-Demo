@@ -1,75 +1,57 @@
-# Nuxt 3 Minimal Starter
+# Horseradish Demo README.md
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+以下會條列式講述每個點我自己的理解以及我的實作與設計
 
-## Setup
+### (1) 用Vue Cli或Nuxt 完成以下功能
+我使用的是Nuxt來完成
 
-Make sure to install the dependencies:
+### (2) 以scss撰寫內容樣式
+有使用，並將全部內容樣式全部寫在main.scss中。並簡單應用scss中的變數、巢狀結構、Mixin等功能增加可重複性。dark mode和light mode的作法也是利用scss的巢狀結構完成
 
-```bash
-# npm
-npm install
+### (3) 應用component功能
+應用了七個Component，包括:
+1. 用於展示第五點的四個component: CustomInput, InputText, InputRadio, InputSelect
+2. 通用於每個頁面的Navbar
+3. 展示是哪個Page的PageTitle
+4. 用於列出第九點fetch到的資料的ProductList。
+### (4) 應用computed功能
+用於Home Page中，展示light mode和dark mode的小方塊。這邊我不是直接用第八點中所使用的theme(使用useState達到全域變數的效果)，而是有點多此一舉的，根據theme的值直接compute 該小方塊的background-color之數值
+```html
+// pages/index.vue
+<template>
+    ...
+    <div class="color-box" :style="{ 'background-color': computedBoxColor }"></div>
+    ...
+</template>
 
-# pnpm
-pnpm install
+<script setup>
+    ...
+    const { toggleTheme, theme } = useTheme()
 
-# yarn
-yarn install
-
-# bun
-bun install
+    const computedBoxColor = computed(() => {
+    // 在这里根据 theme 的值返回相应的背景颜色
+        if (theme.value === 'light') {
+            return "rgba(49, 210, 17, 0.922)"; // 返回红色背景颜色
+        } else {
+            return 'black'; // 返回蓝色背景颜色
+        }
+    });
+    ...
+</script>
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### (5) 製作 輸入類型 text, radio, select 、同一component切換prop來改變對應的輸入類型，並可套用v-model
+主要是利用v-model將資料之間建立雙向綁定外，並為text, radio, select各自建立Component，方便重複利用
+### (6) 可切換頁面
+製作了主頁面、用於展示fetch data的頁面和展示第五點各個component的頁面
+### (7) 設定頁面title, description
+為第六點提到的三個頁面設定了簡單的title, description
+### (8) 設定Global參數、讓頁面的顏色、主題會隨著更換
+利用useState的技術，在composables資料夾建立了useTheme和useArrange。透過Navbar上面的按鈕可以分別改變兩個參數。一個改變顏色主體，一個將每個頁面的展示在flex-row和flex-col之間切換。除此之外也利用scss的巢狀結構功能幫助完成這點
+### (9) 串接一組列表資料api
+簡單使用useFetch串接該組列表資料並展示在fetch api demo page
+### (10) 程式架構做到最大的沿用性、維護性，並於Readme說明你的想法
+程式架構的沿用性在網頁程式設計的展現就是component的設計，如同大一必修的物件導向設計。因此可以畫作component的我盡量都應用。除此之外，我也利用scss(如: mixin功能)，讓樣式的部分也可以更有可讀性和重複利用性。
+### (11) 使用Firebase Hosting，提供連結給我們進行瀏覽
+很抱歉我這點遇到了一些問題。我有看過deploy的方式，但是他一直回應要升級成付費方案才能deploy(must be on the Blaze (pay-as-you-go) plan to complete this command.)。我有嘗試過網路上的一些做法但都無法免費部屬。因此我是採用我比較熟悉的vercel部屬方式。
+### 12. 提供Github程式碼
+https://github.com/TzengKyle/Horseradish-Demo/tree/main

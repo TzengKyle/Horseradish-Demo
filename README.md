@@ -54,5 +54,6 @@ p.s.在使用vertical的排版方式可能比較方便閱讀，由於是小測�
 程式架構的沿用性在網頁程式設計的展現就是component的設計，如同大一必修的物件導向設計。因此可以化作component的我盡量都應用。除此之外，我也利用scss(如: mixin功能)，讓樣式的部分也可以更有可讀性和重複利用性。
 ### (11) 使用Firebase Hosting，提供連結給我們進行瀏覽
 很抱歉我這點遇到了一些問題。我有看過deploy的方式，但是他一直回應要升級成付費方案才能deploy(must be on the Blaze (pay-as-you-go) plan to complete this command.)。我有嘗試過網路上的一些做法但都無法免費部屬。因此我是採用我比較熟悉的vercel部屬方式。
+https://horseradish-demo.vercel.app/
 ### 12. 提供Github程式碼
 https://github.com/TzengKyle/Horseradish-Demo/tree/main

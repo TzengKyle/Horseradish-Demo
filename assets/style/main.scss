@@ -1,19 +1,150 @@
 // main.scss
-
 $primary-color: blue;
 $secondary-color: green;
 
-.header {
-    background-color: $primary-color;
-    padding: 10px;
+a {
+    text-decoration: none;
+}
 
-    a {
-        color: $secondary-color;
-        text-decoration: none;
-        margin-right: 20px;
+@mixin max-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
 
-        &:hover {
-            text-decoration: underline;
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-col {
+    flex-direction: column;
+}
+
+@mixin border($width: 1px, $style: solid, $color: black, $rounded: 0px) {
+    border: $width $style $color;
+    border-radius: $rounded;
+}
+
+.green-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #4CAF50, #45a049);
+
+    &:hover {
+        background-image: linear-gradient(to bottom, #45a049, #4CAF50);
+        box-shadow: 0 6px 12px rgba(49, 210, 17, 0.922);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.yellow-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #ffd900, #f4f2a3);
+
+    &:hover {
+        background-image: linear-gradient(to bottom, #f4f2a3, #ffd900);
+        box-shadow: 0 6px 12px rgb(234, 255, 0);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+// LIGHT MODE
+.light {
+    .ProductList {
+        .list-line {
+            background-color: rgb(255 255 255);
+            color: rgb(0 0 0);
         }
+    }
+
+    .Navbar {
+        background-color: rgb(121, 202, 29);
+        padding: 10px;
+        @include flex-center;
+        gap: 20px;
+
+
+    }
+}
+
+// DARK MODE
+.dark {
+    .ProductList {
+        .list-line {
+            background-color: rgb(62, 47, 47);
+            color: rgb(255 255 255);
+
+        }
+    }
+
+    .Navbar {
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+        @include flex-center;
+        gap: 20px;
+    }
+}
+
+// .ProductList {
+//     .light {
+//         .list-line {
+//             background-color: rgb(0 0 0);
+//             color: rgb(255 255 255);
+//         }
+//     }
+
+//     .dark {
+//         .list-line {
+//             background-color: rgb(255 255 255);
+//             color: rgb(0 0 0);
+//         }
+//     }
+
+// }
+
+.fetch-api-demo-page {
+    @include max-container;
+    display: flex;
+    position: relative;
+
+
+    .website-card {
+        @include border(2px, solid, black, 20px);
+        @include flex-between;
+        background-color: white;
+        width: 100%;
+        // width: 100px;
+        // height: 100px;
     }
 }

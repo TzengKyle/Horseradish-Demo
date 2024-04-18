@@ -2,8 +2,8 @@
     <div>
 
         <Head>
-            <Title>Home - Nuxt 3 Demo</Title>
-            <Meta name="description" content="This is Nuxt 3 Demo" />
+            <Title>Horseradish Demo - Home</Title>
+            <Meta name="description" content="This us Horseradish Demo - Home" />
         </Head>
     </div>
 </template>

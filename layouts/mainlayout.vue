@@ -1,5 +1,5 @@
 <template>
-    <div :class="theme">
+    <div :class="[arrange, theme]">
         <Navbar />
         <slot />
     </div>
@@ -7,4 +7,5 @@
 
 <script setup>
 const { toggleTheme, theme } = useTheme()
+const { toggleArrange, arrange } = useArrange()
 </script>

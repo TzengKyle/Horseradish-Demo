@@ -1,7 +1,7 @@
 <template>
     <div class="ProductList">
         <div v-if="products">
-            <div v-for="p in products" class="list-line">{{ p.title }}</div>
+            <div v-for="(p, index) in products" class="list-line">{{ index + 1 }}.{{ p.title }}<br></div>
         </div>
         <button @click="fetchNew" class="yellow-button">Refresh Data</button>
     </div>

@@ -10,15 +10,20 @@
                 fetch-api-demo
             </button>
         </NuxtLink>
-
-
-
+        <NuxtLink to="/v-model-demo">
+            <button class="yellow-button">
+                v-model-demo
+            </button>
+        </NuxtLink>
         <button class="green-button" @click="toggleTheme">切換主題</button>
+        <button class="green-button" @click="toggleArrange">切換排版</button>
+
     </nav>
 </template>
 
 <script setup>
 const { toggleTheme, theme } = useTheme()
+const { toggleArrange, arrange } = useArrange()
 
 // function _toggleTheme() {
 //     toggleTheme()

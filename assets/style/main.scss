@@ -2,9 +2,7 @@
 $primary-color: blue;
 $secondary-color: green;
 
-a {
-    text-decoration: none;
-}
+
 
 @mixin max-container {
     margin-left: auto;
@@ -31,6 +29,29 @@ a {
 @mixin border($width: 1px, $style: solid, $color: black, $rounded: 0px) {
     border: $width $style $color;
     border-radius: $rounded;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.radio-container {
+    @include flex-col;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .green-button {
@@ -93,10 +114,21 @@ a {
         padding: 10px;
         @include flex-center;
         gap: 20px;
+    }
 
+    .PageTitle {
+        @include flex-center;
+        width: 100%;
 
+        background-color: #fff;
+
+        h1 {
+            color: #000000;
+        }
     }
 }
+
+
 
 // DARK MODE
 .dark {
@@ -113,6 +145,17 @@ a {
         padding: 10px;
         @include flex-center;
         gap: 20px;
+    }
+
+    .PageTitle {
+        @include flex-center;
+        width: 100%;
+
+        background-color: #000000;
+
+        h1 {
+            color: #fff;
+        }
     }
 }
 
@@ -133,18 +176,45 @@ a {
 
 // }
 
-.fetch-api-demo-page {
-    @include max-container;
-    display: flex;
-    position: relative;
+.vertical {
+    .home-page {
+        @include max-container;
+        @include flex-center;
+        @include flex-col;
+        position: relative;
+    }
 
+    .fetch-api-demo-page {
+        @include max-container;
+        @include flex-center;
+        @include flex-col;
+        position: relative;
+    }
 
-    .website-card {
-        @include border(2px, solid, black, 20px);
-        @include flex-between;
-        background-color: white;
-        width: 100%;
-        // width: 100px;
-        // height: 100px;
+    .v-model-demo-page {
+        @include max-container;
+        @include flex-center;
+        @include flex-col;
+        position: relative;
+    }
+}
+
+.horizontal {
+    .home-page {
+        @include max-container;
+        display: flex;
+        position: relative;
+    }
+
+    .fetch-api-demo-page {
+        @include max-container;
+        display: flex;
+        position: relative;
+    }
+
+    .v-model-demo-page {
+        @include max-container;
+        display: flex;
+        position: relative;
     }
 }

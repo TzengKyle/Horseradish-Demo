@@ -1,0 +1,19 @@
+// main.scss
+
+$primary-color: blue;
+$secondary-color: green;
+
+.header {
+    background-color: $primary-color;
+    padding: 10px;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        margin-right: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,5 +1,14 @@
 # Horseradish Demo README.md
 
+## 2024/04/22
+以下是新增的內容
+1. 提升顏色以及切版的視覺和諧度，增加了更具吸引力的色彩和設計風格，使整體畫面更加美觀舒適。
+2. 利用更多 Sass 的功能，包括分檔、extend、mixin。將 mixin 和 extend 各自分檔出去，讓程式碼更有組織性和可維護性。雖然目前只用到一個 variable，但考慮到大型專案可能會有多個，因此也分檔出去。另外，將比較能模組化的 class 也分檔出去，例如在這個 demo 中只有 button 比較好分檔。直接處理 HTML 標籤的部分也分檔。並在class的命名上保持邏輯性。
+3. 增加更多 component，並最大程度利用 props 所帶來的效用。例如，button 可以根據傳入的 buttonClass 更動樣式，也可以傳入 type 和 text。並利用 emit 使這個自定義的 component 一樣可以處理 onClick 事件。另外一個新增的 component 是 ListLine，在這個 demo 中，TodoList 和 ProductList 都會用到 ListLine 這個 component。根據傳入的 props，可以保持大致風格相同但細節樣式不同的效果，從而增加程式碼的可讀性和縝密度。
+4. 增加一個computed的用法。在todolist的form中，title和text會隨時computed成合併起來的json格式，並存到formData裡，在新增進去todos的時候可以直接寫formData
+
+## 2024/04/19
+
 以下會條列式講述每個點我自己的理解以及我的實作與設計。但在部屬方式(第11點)我並沒有使用firebase hosting進行部屬。十分抱歉與感謝!
 p.s.在使用vertical的排版方式可能比較方便閱讀，由於是小測驗所以我沒有太注重介面的美觀度。
 

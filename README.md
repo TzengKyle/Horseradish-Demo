@@ -7,7 +7,7 @@
 3. 增加更多 component，並最大程度利用 props 所帶來的效用。例如，button 可以根據傳入的 buttonClass 更動樣式，也可以傳入 type 和 text。並利用 emit 使這個自定義的 component 一樣可以處理 onClick 事件。另外一個新增的 component 是 ListLine，在這個 demo 中，TodoList 和 ProductList 都會用到 ListLine 這個 component。根據傳入的 props，可以保持大致風格相同但細節樣式不同的效果，從而增加程式碼的可讀性和縝密度。
 4. 增加一個computed的用法。在todolist的form中，title和text會隨時computed成合併起來的json格式，並存到formData裡，在新增進去todos的時候可以直接寫formData
 
-p.s.: todolist沒有串用localstorage和資料庫，因此更新頁面就會消掉所有紀錄
+p.s.: todolist沒有用localstorage和資料庫，因此更新頁面就會消掉所有紀錄
 
 ## 2024/04/19
 

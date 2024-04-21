@@ -4,33 +4,38 @@
         <Meta name="description" content="This is v-model demo page" />
     </Head>
     <div class="v-model-demo-page">
-        <PageTitle>v-model demo page</PageTitle>
+        <div class="page-title-container">
+            <PageTitle>v-model demo page</PageTitle>
+        </div>
 
-        <form>
-            <h3>InputText</h3>
-            <InputText v-model="name" placeholder="Name" />
-            <div style="padding-top: 10px; padding-left: 5px">Name: {{ name }}</div>
-            <hr>
+        <div class="page-content-container">
+            <form>
+                <h3>InputText</h3>
+                <InputText v-model="name" placeholder="Name" />
+                <div style="padding-top: 10px; padding-left: 5px">Name: {{ name }}</div>
+                <hr>
 
-            <h3>InputRadio</h3>
-            <InputRadio v-model="fruit" :options="fruitOptions" />
-            <div style="padding-top: 10px; padding-left: 5px">Selected Fruit: {{ fruit }}</div>
-            <hr>
+                <h3>InputRadio</h3>
+                <InputRadio v-model="fruit" :options="fruitOptions" />
+                <div style="padding-top: 10px; padding-left: 5px">Selected Fruit: {{ fruit }}</div>
+                <hr>
 
-            <h3>InputSelect</h3>
-            <InputSelect v-model="game" :options="gameOptions" />
-            <div style="padding-top: 10px; padding-left: 5px">Selected Game: {{ game }}</div>
-            <hr>
+                <h3>InputSelect</h3>
+                <InputSelect v-model="game" :options="gameOptions" />
+                <div style="padding-top: 10px; padding-left: 5px">Selected Game: {{ game }}</div>
+                <hr>
 
-            <h3>CustomInput</h3>
-            <span>Choose a input type:</span>
-            <br>
-            <CustomInput inputType="InputSelect" v-model="type" :options="typeOptions" />
-            <hr>
-            <CustomInput :inputType="type" v-model="customRef" :options="customRefOptions" />
-            <div style="padding-top: 10px; padding-left: 5px">CustomRef: {{ customRef }}</div>
-            <hr>
-        </form>
+                <h3>CustomInput</h3>
+                <span>Choose a input type:</span>
+                <br>
+                <CustomInput inputType="InputSelect" v-model="type" :options="typeOptions" />
+                <hr>
+                <CustomInput :inputType="type" v-model="customRef" :options="customRefOptions" />
+                <div style="padding-top: 10px; padding-left: 5px">CustomRef: {{ customRef }}</div>
+                <hr>
+            </form>
+        </div>
+
     </div>
 </template>
 

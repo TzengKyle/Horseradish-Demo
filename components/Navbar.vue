@@ -1,23 +1,24 @@
 <template>
     <nav class="Navbar">
-        <NuxtLink to="/">
-            <button class="yellow-button">
-                Home
-            </button>
+        <!-- Left -->
+        <NuxtLink class="logo" to="/">
+            DEMO
         </NuxtLink>
-        <NuxtLink to="/fetch-api-demo">
-            <button class="yellow-button">
-                fetch-api-demo
-            </button>
-        </NuxtLink>
-        <NuxtLink to="/v-model-demo">
-            <button class="yellow-button">
-                v-model-demo
-            </button>
-        </NuxtLink>
-        <button class="green-button" @click="toggleTheme">切換主題</button>
-        <button class="green-button" @click="toggleArrange">切換排版</button>
 
+        <!-- Right -->
+        <div class="buttons">
+            <NuxtLink to="/todo-list-demo">
+                <Button buttonText="todo-list-demo" buttonClass="white-button" />
+            </NuxtLink>
+            <NuxtLink to="/fetch-api-demo">
+                <Button buttonText="fetch-api-demo" buttonClass="white-button" />
+            </NuxtLink>
+            <NuxtLink to="/v-model-demo">
+                <Button buttonText="v-model-demo" buttonClass="white-button" />
+            </NuxtLink>
+            <Button buttonText="切換主題" buttonClass="black-button" @click="toggleTheme" />
+            <Button buttonText="切換排版" buttonClass="black-button" @click="toggleArrange" />
+        </div>
     </nav>
 </template>
 

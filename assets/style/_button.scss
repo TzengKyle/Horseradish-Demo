@@ -1,0 +1,43 @@
+// _button.scss\
+@import 'mixin';
+
+%button-base {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.black-button {
+    @extend %button-base;
+    @include border($color: white);
+    color: white;
+    background-color: black;
+
+    &:hover {
+        @include border();
+        background-color: aliceblue;
+        color: black;
+    }
+}
+
+.white-button {
+    @extend %button-base;
+    @include border();
+    color: black;
+    background-color: white;
+
+    &:hover {
+        @include border($color: white);
+        background-color: black;
+        color: white;
+    }
+}

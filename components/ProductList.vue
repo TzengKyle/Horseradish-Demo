@@ -1,14 +1,13 @@
 <template>
     <div class="ProductList">
         <div v-if="products">
-            <div v-for="(p, index) in products" class="list-line">{{ index + 1 }}.{{ p.title }}<br></div>
+            <ListLine v-for="(p, index) in products" :key="p.id" :index="index" :title="p.title" />
         </div>
-        <button @click="fetchNew" class="yellow-button">Refresh Data</button>
+        <Button buttonText="Refresh Data" buttonClass="white-button" @click="fetchNew" />
     </div>
 </template>
 
 <script setup>
-const { toggleTheme, theme } = useTheme()
 
 const {
     data: products,

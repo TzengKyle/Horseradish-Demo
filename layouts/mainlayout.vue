@@ -5,6 +5,7 @@
     </div>
 </template>
 
+
 <script setup>
 const { toggleTheme, theme } = useTheme()
 const { toggleArrange, arrange } = useArrange()

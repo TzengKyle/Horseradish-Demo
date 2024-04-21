@@ -1,43 +1,10 @@
 // main.scss
-$primary-green: rgba(49, 210, 17, 0.922);
+@import 'button';
+@import 'mixin';
+@import 'extend';
+@import 'variable';
+@import 'base';
 
-@mixin max-container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1280px;
-}
-
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@mixin flex-col {
-    flex-direction: column;
-}
-
-@mixin border($width: 1px, $style: solid, $color: black, $rounded: 0px) {
-    border: $width $style $color;
-    border-radius: $rounded;
-}
-
-a {
-    text-decoration: none;
-}
-
-input {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 .color-box {
     width: 50px;
@@ -57,150 +24,136 @@ input {
     }
 }
 
-.green-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-image: linear-gradient(to bottom, #4CAF50, #45a049);
-
-    &:hover {
-        background-image: linear-gradient(to bottom, #45a049, #4CAF50);
-        box-shadow: 0 6px 12px $primary-green;
-    }
-
-    &:active {
-        transform: translateY(1px);
-    }
+.page-title-container {
+    @include flex-center();
+    width: 50%
 }
 
-.yellow-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-image: linear-gradient(to bottom, #ffd900, #f4f2a3);
-
-    &:hover {
-        background-image: linear-gradient(to bottom, #f4f2a3, #ffd900);
-        box-shadow: 0 6px 12px rgb(234, 255, 0);
-    }
-
-    &:active {
-        transform: translateY(1px);
-    }
+.page-content-container {
+    @include flex-center();
+    width: 50%
 }
 
 // LIGHT MODE
 .light {
-    .ProductList {
-        .list-line {
-            background-color: rgb(255 255 255);
-            color: rgb(0 0 0);
-        }
-    }
+    @include container();
+    background: white;
+    color: black;
 
     .Navbar {
-        background-color: rgb(121, 202, 29);
-        padding: 10px;
-        @include flex-center;
-        gap: 20px;
+        @extend %Navbar-base;
+
+        @include border();
+        background-color: white;
+
+        .logo {
+            color: black
+        }
     }
 
     .PageTitle {
-        @include flex-center;
-        width: 100%;
+        @extend %PageTitle-base;
+        @include border(3px, dashed);
+    }
 
-        background-color: #fff;
+    .ProductList {
+        .list-line {
+            @extend %list-line-base;
+        }
+    }
 
-        h1 {
-            color: #000000;
+    .todo-list-container {
+        @include border();
+        padding: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .TodoList {
+        @extend %TodoList-base;
+
+        .list-line {
+            @extend %list-line-base;
+            width: 300px;
         }
     }
 }
-
 
 
 // DARK MODE
 .dark {
+    @include container();
+    background: black;
+    color: white;
+
     .ProductList {
         .list-line {
-            background-color: rgb(62, 47, 47);
-            color: rgb(255 255 255);
-
+            @extend %list-line-base;
+            border-color: white;
         }
     }
 
     .Navbar {
+        @extend %Navbar-base;
+        @include border($color: white);
         background-color: rgb(0, 0, 0);
-        padding: 10px;
-        @include flex-center;
-        gap: 20px;
+
+        .logo {
+            color: #fff
+        }
     }
 
     .PageTitle {
-        @include flex-center;
-        width: 100%;
+        @extend %PageTitle-base;
+        @include border(3px, dashed, white);
+    }
 
-        background-color: #000000;
+    .todo-list-container {
+        @include border($color: white);
+        padding: 50px;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
 
-        h1 {
-            color: #fff;
+    .TodoList {
+        @extend %TodoList-base;
+
+        .list-line {
+            @extend %list-line-base;
+            width: 300px;
+            border-color: white;
         }
     }
 }
 
+
+
 .vertical {
-    .home-page {
-        @include max-container;
-        @include flex-center;
-        @include flex-col;
-        position: relative;
-    }
 
-    .fetch-api-demo-page {
-        @include max-container;
-        @include flex-center;
-        @include flex-col;
-        position: relative;
-    }
-
+    .home-page,
+    .fetch-api-demo-page,
     .v-model-demo-page {
         @include max-container;
         @include flex-center;
         @include flex-col;
-        position: relative;
     }
 }
 
 .horizontal {
-    .home-page {
-        @include max-container;
-        display: flex;
-        position: relative;
-    }
 
-    .fetch-api-demo-page {
-        @include max-container;
-        display: flex;
-        position: relative;
-    }
-
+    .home-page,
+    .fetch-api-demo-page,
     .v-model-demo-page {
         @include max-container;
         display: flex;
-        position: relative;
+        min-height: calc(100vh - $Navbar-height - 4px);
     }
+}
+
+
+
+
+
+.todo-list-page {
+    @include max-container;
+    @include flex-center;
+    min-height: calc(100vh - $Navbar-height - 4px);
 }

@@ -1,6 +1,6 @@
 <template>
     <input type="text" :placeholder="placeholder" :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)">
+        @input="$emit('update:modelValue', $event.target.value)" :style="{ width: width }">
 </template>
 
 <script setup>
@@ -9,6 +9,11 @@ const props = defineProps({
     modelValue: {
         type: String,
         required: true,
+        default: '',
+    },
+    width: {
+        type: String,
+        default: '200px' // 預設寬度，可以根據需要調整
     }
 })
 </script>

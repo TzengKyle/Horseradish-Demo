@@ -1,0 +1,33 @@
+@mixin max-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    position: relative;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-col {
+    flex-direction: column;
+}
+
+@mixin border($width: 1px, $style: solid, $color: black, $rounded: 0px) {
+    border: $width $style $color;
+    border-radius: $rounded;
+}
+
+@mixin container {
+    @include border($color: red);
+    width: 100%;
+    min-height: 100vh;
+}

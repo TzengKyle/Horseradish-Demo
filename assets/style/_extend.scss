@@ -1,0 +1,48 @@
+@import 'variable';
+
+%Navbar-base {
+    @include flex-between();
+    @include max-container();
+    height: $Navbar-height;
+
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        padding-left: 30px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+        padding-right: 30px;
+    }
+}
+
+%PageTitle-base {
+    @include flex-center;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+%TodoList-base {
+    @include flex-center;
+    @include flex-col;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+%list-line-base {
+    @include border($rounded: 5px);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
